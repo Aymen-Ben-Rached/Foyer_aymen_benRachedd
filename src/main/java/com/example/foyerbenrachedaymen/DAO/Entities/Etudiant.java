@@ -1,10 +1,16 @@
 package com.example.foyerbenrachedaymen.DAO.Entities;
 
 import jakarta.persistence.*;
+import lombok.*;
 
 import java.time.LocalDate;
 @Entity
-@Table(name="Etudiant")
+@Table
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
 public class Etudiant {
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
