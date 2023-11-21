@@ -19,7 +19,7 @@ import java.util.Set;
 public class Reservation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long idReservation;
+    private String idReservation;
     private LocalDate anneeUniversitaire;
     private boolean estValide;
     @ManyToMany(cascade = CascadeType.ALL)
