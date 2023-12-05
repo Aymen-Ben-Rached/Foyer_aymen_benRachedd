@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -23,9 +25,8 @@ public class Foyer {
     private String nomFoyer;
     private long capaciteFoyer;
     @OneToOne(mappedBy = "foyer")
-    private Universite universite;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "foyer")
-    private Set<Bloc> blocs;
-
+    Universite universite;
+    @OneToMany(mappedBy = "foyer") //a verifier Unidirectionnelle ou Bidirectionnelle
+    List<Bloc> blocs = new ArrayList<>();
 
 }

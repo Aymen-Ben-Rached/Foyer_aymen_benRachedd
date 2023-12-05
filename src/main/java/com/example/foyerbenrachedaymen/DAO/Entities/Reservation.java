@@ -5,6 +5,8 @@ import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -22,6 +24,6 @@ public class Reservation {
     private String idReservation;
     private LocalDate anneeUniversitaire;
     private boolean estValide;
-    @ManyToMany(cascade = CascadeType.ALL)
-    private Set<Etudiant> etudiants;
+    @ManyToMany(mappedBy = "reservations", cascade = CascadeType.ALL)
+    List<Etudiant> etudiants = new ArrayList<>();
 }
